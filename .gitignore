@@ -10,7 +10,7 @@ __pycache__/**/
 *$py.class
 *.pyo
 *.pyd
-*.pyc
+*.юpyc
 
 # Common typo/mistake variants
 pycache/
@@ -115,6 +115,7 @@ site/
 # -------------------------
 # IDEs
 # -------------------------
+.idea
 .idea/
 .vscode/
 .spyderproject
