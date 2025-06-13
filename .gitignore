@@ -185,3 +185,9 @@ Thumbs.db
 # -------------------------
 # Example custom ignored file
 # -------------------------
+/data/
+/Session
+/photos
+/module/chat_parser/Session
+/module/Inviter/session
+/module/Inviter/session_old
