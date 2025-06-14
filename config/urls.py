@@ -1,8 +1,9 @@
 # config/urls.py
-from django.contrib import admin
 from django.urls import path, include
+from django.contrib import admin
 
 urlpatterns = [
+    path('admin_tools/', include('admin_tools.urls')),  # <- добавляем это
     path('admin/', admin.site.urls),
-    path('', include('apps.core.urls')),
+    # другие маршруты
 ]
