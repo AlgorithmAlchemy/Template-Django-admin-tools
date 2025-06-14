@@ -15,6 +15,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'admin_tools',
+    'admin_tools.theming',
+    'admin_tools.menu',
+    'admin_tools.dashboard',
+
     'apps.core',
 ]
 
@@ -66,3 +72,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Дополнительные настройки для admin_tools
+ADMIN_TOOLS_INDEX_DASHBOARD = 'config.admin_tools.CustomIndexDashboard'
+ADMIN_TOOLS_APP_INDEX_DASHBOARD = 'config.admin_tools.CustomAppIndexDashboard'
