@@ -10,7 +10,8 @@ __pycache__/**/
 *$py.class
 *.pyo
 *.pyd
-*.юpyc
+*.pyc
+
 
 # Common typo/mistake variants
 pycache/
@@ -51,12 +52,17 @@ venv_env/
 .Python
 build/
 dist/
+parts/
 sdist/
 wheels/
 downloads/
 .eggs/
 *.egg
 *.egg-info/
+lib/
+lib64/
+var/
+share/python-wheels/
 .installed.cfg
 MANIFEST
 
@@ -184,6 +190,33 @@ Thumbs.db
 *.bak
 
 # -------------------------
+# SQLite temporary and ShowYourWork database files
+# -------------------------
+
+_showyourwork.sqlite
+_showyourwork.sqlite-journal
+_showyourwork.sqlite-wal
+_showyourwork.sqlite-shm
+_showyourwork.*
+showyourwork.sqlite
+showyourwork.sqlite-journal
+showyourwork.sqlite-wal
+showyourwork.sqlite-shm
+*.sqlite
+*.sqlite3
+
+# -------------------------
+# Translations
+# -------------------------
+*.mo
+*.pot
+
+# -------------------------
+# Cython debug symbols
+# -------------------------
+cython_debug/
+
+# -------------------------
 # Example custom ignored file
 # -------------------------
 /data/
@@ -192,4 +225,3 @@ Thumbs.db
 /module/chat_parser/Session
 /module/Inviter/session
 /module/Inviter/session_old
-_showyourwork.sqlite
