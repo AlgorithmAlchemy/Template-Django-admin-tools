@@ -1,8 +1,4 @@
-# config/admin_tools.py
-from django.utils.translation import gettext_lazy as _
-from admin_tools.dashboard import Dashboard, AppIndexDashboard, modules
-
-
+from admin_tools.dashboard import modules, Dashboard
 
 class CustomIndexDashboard(Dashboard):
     def init_with_context(self, context):
@@ -14,7 +10,3 @@ class CustomIndexDashboard(Dashboard):
                 {'title': 'Документация Django', 'url': 'https://docs.djangoproject.com/'},
             ]
         ))
-
-
-class CustomAppIndexDashboard(AppIndexDashboard):
-    pass
