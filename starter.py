@@ -6,8 +6,8 @@ import time
 from watchdog.observers import Observer
 from watchdog.events import PatternMatchingEventHandler
 
-DJANGO_SETTINGS_MODULE = 'config.settings'  # Замени, если у тебя другое
-WATCH_PATHS = ['.']  # Папки для отслеживания
+DJANGO_SETTINGS_MODULE = 'config.settings'
+WATCH_PATHS = ['.']  # Folders for tracking
 
 patterns = ['*.py', '*.html', '*.env']
 ignore_patterns = ['*/migrations/*.py', '*.pyc', '__pycache__']
@@ -21,10 +21,10 @@ server_process = None
 def run_server():
     global server_process
     if server_process:
-        print('⏹  Остановка сервера...')
+        print('Stopping the server...')
         server_process.terminate()
         server_process.wait()
-    print('🚀 Запуск сервера...')
+    print('Server Startup...')
     server_process = subprocess.Popen(
         [sys.executable, 'manage.py', 'runserver'],
         stdout=sys.stdout,
@@ -33,16 +33,17 @@ def run_server():
 
 class ChangeHandler(PatternMatchingEventHandler):
     def on_modified(self, event):
-        print(f'📦 Изменён файл: {event.src_path}')
+        print(f'Modified file: {event.src_path}')
         run_server()
 
     def on_created(self, event):
-        print(f'📄 Создан файл: {event.src_path}')
+        print(f'Created a file: {event.src_path}')
         run_server()
 
     def on_deleted(self, event):
-        print(f'❌ Удалён файл: {event.src_path}')
+        print(f'File deleted: {event.src_path}')
         run_server()
+
 
 def start_watcher():
     observer = Observer()
@@ -64,11 +65,12 @@ def main():
         while True:
             time.sleep(1)
     except KeyboardInterrupt:
-        print('🛑 Завершение...')
+        print('Completions...')
         observer.stop()
         if server_process:
             server_process.terminate()
     observer.join()
+
 
 if __name__ == '__main__':
     main()

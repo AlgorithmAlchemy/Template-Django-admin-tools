@@ -75,6 +75,6 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Дополнительные настройки для admin_tools
+# Additional settings
 ADMIN_TOOLS_INDEX_DASHBOARD = 'config.admin_tools.CustomIndexDashboard'
 ADMIN_TOOLS_APP_INDEX_DASHBOARD = 'config.admin_tools.CustomAppIndexDashboard'
