@@ -18,6 +18,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', DJANGO_SETTINGS_MODULE)
 
 server_process = None
 
+
 def run_server():
     global server_process
     if server_process:
@@ -30,6 +31,7 @@ def run_server():
         stdout=sys.stdout,
         stderr=sys.stderr
     )
+
 
 class ChangeHandler(PatternMatchingEventHandler):
     def on_modified(self, event):
@@ -57,6 +59,7 @@ def start_watcher():
         observer.schedule(handler, path=path, recursive=True)
     observer.start()
     return observer
+
 
 def main():
     run_server()

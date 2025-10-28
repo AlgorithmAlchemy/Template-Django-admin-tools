@@ -3,7 +3,6 @@ from django.utils.translation import gettext_lazy as _
 from admin_tools.dashboard import Dashboard, AppIndexDashboard, modules
 
 
-
 class CustomIndexDashboard(Dashboard):
     def init_with_context(self, context):
         self.children.append(modules.LinkList(
